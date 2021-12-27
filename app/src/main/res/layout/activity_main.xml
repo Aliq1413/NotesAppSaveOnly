@@ -4,9 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/note"
     tools:context=".MainActivity">
 
-
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rV"
+        android:layout_width="408dp"
+        android:layout_height="629dp"
+        app:layout_constraintBottom_toTopOf="@+id/allStates"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:listitem="@layout/item_row" />
 
     <LinearLayout
         android:id="@+id/allStates"
@@ -16,8 +27,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.38"
-        app:layout_constraintStart_toStartOf="parent"
-        >
+        app:layout_constraintStart_toStartOf="parent">
 
         <EditText
             android:id="@+id/edText"
@@ -25,9 +35,12 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
-            android:inputType="text"
-            android:minHeight="48dp"
             android:hint="Enter Massage"
+            android:textColor="@color/black"
+            android:inputType="text"
+            android:textStyle="bold"
+            android:background="#94FFFFFF"
+            android:minHeight="48dp"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <Button
@@ -36,5 +49,12 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Save" />
+
+        <Button
+            android:id="@+id/btRead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Get Note" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
